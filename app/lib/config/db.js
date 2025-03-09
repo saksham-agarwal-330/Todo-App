@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const connectDb = async () => {
     try {
-        await mongoose.connect("mongodb+srv://saksham:2y2XXPqLx1e7kVNw@todo.9r47l.mongodb.net/todo-app");
+        await mongoose.connect(process.env.MONGODB_URI);
         console.log("Connected to MongoDB");
     } catch (error) {
         console.error("Error connecting to MongoDB:", error);
@@ -10,4 +10,4 @@ const connectDb = async () => {
     }
 };
 
-export default connectDb; // ✅ Exporting as default
+export default connectDb; 
